@@ -76,3 +76,13 @@ In any case, the core engine Orthanc keeps an index of all these DICOM identifie
 
 ## DICOM network protocol
 
+The DICOM protocol is actually one of the earliest example of **Web services**, long before **SOAP** and **REST**.
+Through this protocol you can:
+- **Test the connection** between two devices (*C-Echo*).
+- **Send images** from the local imaging device to a remote device (*C-Store*).
+- **Search the content** of a remote device (*C-Find*). 
+- **Retrieve images** from a remote device (*C-Move* or *C-Get*)
+
+In the DICOM terminology, the client of a DICOM service is called a **service class user** (SCU) and the server that provides the requests is called a **service class provider** (SCP). The client sends a request that is encoded as a DICOM file (the **command**). and the server answers with a DICOM file.
+
+Connection between SCU and SCP is called an **association**. This association starts with a handshake between the client and the server agreeing on the commands that can be exchanged between them and as well as which *transfer syntaxes* are supported.
